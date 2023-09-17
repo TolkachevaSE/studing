@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>ParsingTest xref</title>
+<link type="text/css" rel="stylesheet" href="../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../site/testapidocs/ParsingTest.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">import</strong> org.junit.jupiter.api.Test;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <strong class="jxr_keyword">import</strong> org.junit.jupiter.params.ParameterizedTest;
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> org.junit.jupiter.params.provider.CsvSource;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.junit.jupiter.params.provider.MethodSource;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> java.lang.Double.NaN;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.jupiter.api.Assertions.assertEquals;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="ParsingTest" href="..//ParsingTest.html#ParsingTest">ParsingTest</a> {
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>      @ParameterizedTest(name = <span class="jxr_string">"{index} - operator input testing. Input &lt;{1}&gt; and expected {0}"</span>)
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      @CsvSource({
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>              <span class="jxr_string">"+,+"</span>,
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>              <span class="jxr_string">"-, -"</span>,
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>              <span class="jxr_string">"/, /"</span>,
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>              <span class="jxr_string">"*, *"</span>,
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>              <span class="jxr_string">"wrong, 46"</span>,
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>              <span class="jxr_string">"wrong, sffs "</span>,
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>              <span class="jxr_string">"wrong, @"</span>})
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCheckOperator(String expected_s, String symbol) {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          assertEquals(expected_s, Calculator.checkOperator(symbol), <span class="jxr_string">"checkOperator doesn't work for &lt;"</span> + symbol + <span class="jxr_string">"&gt;"</span>);
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>      }
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Object[] number() {
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Object[][]{
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>                  {<span class="jxr_string">"-25.3"</span>, -25.3},
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>                  {<span class="jxr_string">"1.7976931348623157E308"</span>, 1.7976931348623157E308},
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>                  {<span class="jxr_string">"0"</span>, 0},
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>                  {<span class="jxr_string">"8.8397116228599368E18"</span>, 8.8397116228599368E18}
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          };
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      }
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      @ParameterizedTest(name = <span class="jxr_string">"{index} - valid number input testing. Enter &lt;{0}&gt; and expect to get {1}"</span>)
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      @MethodSource(<span class="jxr_string">"number"</span>)
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testValidNumber(String in, <strong class="jxr_keyword">double</strong> expected) {
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          assertEquals(expected, Calculator.getNumber(in));
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>      }
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      @ParameterizedTest(name = <span class="jxr_string">"{index} - invalid number input testing. Enter &lt;{0}&gt; and expect to get NaN"</span>)
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>      @CsvSource({
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>              <span class="jxr_string">"22 33"</span>,
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>              <span class="jxr_string">"word"</span>,
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>              <span class="jxr_string">"@"</span>,
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>              <span class="jxr_string">"6word"</span>})
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testInvalidNumber(String symbol) {
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>          assertEquals(NaN, Calculator.getNumber(symbol), symbol + <span class="jxr_string">" doesn't work as invalid, but it should be wrong"</span>);
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      }
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      @Test
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testOverflow(){
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          assertEquals(Double.POSITIVE_INFINITY,Calculator.getResult(Double.MAX_VALUE,<span class="jxr_string">"*"</span>,Double.MAX_VALUE),<span class="jxr_string">"qweqwe"</span>);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>          assertEquals(Double.NEGATIVE_INFINITY,Calculator.getResult(-Double.MAX_VALUE,<span class="jxr_string">"*"</span>,Double.POSITIVE_INFINITY));
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      }
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2022. All rights reserved.</div>
+</body>
+</html>

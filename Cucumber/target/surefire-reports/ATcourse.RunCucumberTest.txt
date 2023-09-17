@@ -1,0 +1,69 @@
+-------------------------------------------------------------------------------
+Test set: ATcourse.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 58.757 s <<< FAILURE! - in ATcourse.RunCucumberTest
+Testing the dropdowns for auto and flat.Opening the auto menu  Time elapsed: 9.866 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step "The dropdown menu has appeared that displays "<categories_for_auto>" - division by price, by city and brand" is undefined. You can implement it using the snippet(s) below:
+
+@Then("The dropdown menu has appeared that displays {string} - division by price, by city and brand")
+public void the_dropdown_menu_has_appeared_that_displays_division_by_price_by_city_and_brand(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Testing the dropdowns for auto and flat.Opening the flat menu #1  Time elapsed: 9.06 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588023021.0.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588023021.0.html
+Timeout: 4 s.
+
+Testing the dropdowns for auto and flat.Opening the flat menu #2  Time elapsed: 7.494 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588030703.1.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588030703.1.html
+Timeout: 4 s.
+
+Testing the dropdowns for auto and flat.Opening the flat menu #3  Time elapsed: 8.436 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588039254.2.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588039254.2.html
+Timeout: 4 s.
+
+Testing the dropdowns for auto and flat.Opening the flat menu #4  Time elapsed: 8.005 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588047260.3.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588047260.3.html
+Timeout: 4 s.
+
+Testing the dropdowns for auto and flat.Opening the flat menu #5  Time elapsed: 7.8 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588055023.4.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588055023.4.html
+Timeout: 4 s.
+
+Testing the dropdowns for auto and flat.Opening the flat menu #6  Time elapsed: 7.328 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have text "Минск" {By.xpath: //span[contains(@class,'navigation__dropdown-advert-sign')]}
+Element: '<span class="b-main-navigation__dropdown-advert-sign" displayed:false></span>'
+Actual value: text=""
+Screenshot: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588062418.5.png
+Page source: file:/C:/%5BALL%5D/JavaSv/ForGit/ForGithub/Cucumber/build/reports/tests/1674588062418.5.html
+Timeout: 4 s.
+
