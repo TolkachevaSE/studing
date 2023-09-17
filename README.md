@@ -3,9 +3,9 @@ This repository contains some homework from my Epam course on automated testing 
 
 ## Calculator&TestsJUnit5
 
-- Write a simple calculator with four basic operations in Java. 
-- Test code by JUnit5.
-- Get a report in Surefire reports. 
+1. Write a simple calculator with four basic operations in Java. 
+2. Test code by JUnit5.
+3. Get a report in Surefire reports. 
 
 
 ## SelenideOnliner
@@ -18,7 +18,7 @@ items "Laptops, computers, monitors", "Components", "Data storage", "Network equ
 3. open the item "Accessories". Check that in the list of components that appears, all elements contain the name, quantity of goods and the minimum price.
 4. All tests must be independent of each other.
 
-##Cucumber
+## Cucumber
 
 Website onliner.by testing using Selenide, JUnit4, Cucumber. 
   Scenarios:
@@ -27,7 +27,7 @@ Website onliner.by testing using Selenide, JUnit4, Cucumber.
 
 
 
-##API Test
+## API Test
 
   Test Steps:
 1. Open **Dev Tools** -> **Network**.
